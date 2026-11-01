@@ -54,7 +54,7 @@ python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 
 ## Production deployment
 
-- `render.yaml` defines the FastAPI service; connect the repository in Render and provide any integration secrets through Render's environment settings.
+- `render.yaml` defines the FastAPI service on Render's free compute plan; expect cold starts and ephemeral local files. Render advises against using free instances for production applications.
 - Deploy `frontend` as the Vercel project root. `frontend/vercel.json` configures SPA route fallback.
 - Set Vercel's `VITE_API_URL` build variable to the deployed Render API origin, then redeploy the frontend.
 - Never expose the Supabase service-role key or OpenAI key in frontend variables.
