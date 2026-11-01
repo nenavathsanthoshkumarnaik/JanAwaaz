@@ -1267,7 +1267,11 @@ function DocumentsPage() {
               <div className="rounded-3xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#102A43] text-white"><Upload size={22} /></div>
                 <h3 className="mt-4 text-lg font-semibold text-slate-900">No files uploaded yet</h3>
-                <p className="mt-2 text-sm text-slate-600">Upload identity, income, residence, and education documents only after the required service has been selected.</p>
+                <p className="mt-2 text-sm text-slate-600">
+                  {import.meta.env.DEV
+                    ? 'Upload non-sensitive test files after choosing a service.'
+                    : 'Cloud document storage is not configured, so the hosted preview does not store uploads.'}
+                </p>
               </div>
             ) : !documentsLoading && !documentsError ? (
               documents.map((document) => (
