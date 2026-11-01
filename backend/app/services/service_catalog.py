@@ -1,0 +1,80 @@
+from __future__ import annotations
+
+from typing import Any, Dict, List
+
+SERVICE_CATALOG: List[Dict[str, Any]] = [
+    {
+        "id": "student-scholarships",
+        "service_name": "Student Scholarships",
+        "category": "Education",
+        "department": "Ministry of Education",
+        "portal": "Official reference source: National Scholarship Portal",
+        "description": "Official National Scholarship Portal link for public reference. This catalog does not synchronize scheme details; confirm current eligibility and deadlines on the official portal.",
+        "eligibility": "Check current scheme-specific eligibility and deadlines on the official National Scholarship Portal.",
+        "required_documents": ["Identity proof", "Income certificate", "Academic transcripts", "Bank account details"],
+        "source_status": "reference_only",
+        "automation_permission": False,
+        "official_source_name": "National Scholarship Portal",
+        "source_url": "https://scholarships.gov.in/",
+    },
+    {
+        "id": "income-certificate",
+        "service_name": "Income Certificate",
+        "category": "Certificates",
+        "department": "State Administration",
+        "portal": "Official reference source: State e-District / district administration portal",
+        "description": "General Government of India directory link only. The correct issuing portal and requirements depend on the applicant's state and district and have not been connected.",
+        "eligibility": "State and district-specific eligibility is not configured. Confirm requirements with the applicant's local issuing authority.",
+        "required_documents": ["Identity proof", "Address proof", "Income declaration", "Family details"],
+        "source_status": "reference_only",
+        "automation_permission": False,
+        "official_source_name": "State e-District / District Administration",
+        "source_url": "https://www.india.gov.in/",
+    },
+    {
+        "id": "employment-registration",
+        "service_name": "Employment Registration",
+        "category": "Employment",
+        "department": "Labour Department",
+        "portal": "Official reference source: National Career Services / employment portal",
+        "description": "Official National Career Service portal link for job and career services. JanAwaaz does not import or synchronize listings or registration requirements.",
+        "eligibility": "Check current registration and service requirements on the National Career Service portal.",
+        "required_documents": ["ID proof", "Resume", "Qualification records", "Employment registration details"],
+        "source_status": "reference_only",
+        "automation_permission": False,
+        "official_source_name": "National Career Services",
+        "source_url": "https://www.ncs.gov.in/",
+    },
+    {
+        "id": "residence-certificate",
+        "service_name": "Residence Certificate",
+        "category": "Certificates",
+        "department": "District Administration",
+        "portal": "Official reference source: District administration / e-District portal",
+        "description": "General Government of India directory link only. The correct issuing portal and requirements depend on the applicant's state and district and have not been connected.",
+        "eligibility": "State and district-specific residency requirements are not configured. Confirm requirements with the applicant's local issuing authority.",
+        "required_documents": ["Address proof", "Identity card", "Ration card or utility bill", "Declaration of residence"],
+        "source_status": "reference_only",
+        "automation_permission": False,
+        "official_source_name": "District Administration / e-District",
+        "source_url": "https://www.india.gov.in/",
+    },
+    {
+        "id": "farmer-subsidy",
+        "service_name": "Farmer Subsidy Support",
+        "category": "Agriculture",
+        "department": "Agriculture Department",
+        "portal": "Official reference source: PM-Kisan / agriculture department portal",
+        "description": "Official PM-KISAN portal link for public reference. This catalog does not synchronize scheme rules or beneficiary status; confirm current details on the official portal.",
+        "eligibility": "Check current scheme eligibility and application requirements on the official PM-KISAN portal.",
+        "required_documents": ["Land records", "Identity proof", "Crop details", "Bank account details"],
+        "source_status": "reference_only",
+        "automation_permission": False,
+        "official_source_name": "PM-KISAN / Agriculture Department",
+        "source_url": "https://pmkisan.gov.in/",
+    },
+]
+
+
+def get_catalog() -> List[Dict[str, Any]]:
+    return [dict(item) for item in SERVICE_CATALOG]
